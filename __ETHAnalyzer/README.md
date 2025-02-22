@@ -15,7 +15,7 @@ This project is a **Crypto Trading Decision System** that fetches historical cry
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/crypto-trading-decision.git
+   git clone https://github.com/tomkaboris/python.git
    cd crypto-trading-decision
    ```
 
@@ -25,31 +25,46 @@ This project is a **Crypto Trading Decision System** that fetches historical cry
    ```
 
 3. **Required Python Packages**
-- ccxt (Binance API for fetching market data)
-- pandas
-- numpy
-- tabulate
-- argparse
+   - [ccxt](https://github.com/ccxt/ccxt) (Binance API for fetching market data)
+   - pandas
+   - numpy
+   - tabulate
+   - argparse
+
+   To install them manually:
+   ```bash
+   pip install ccxt pandas numpy tabulate argparse
+   ```
+
+---
 
 ## 🏗 Usage
-Run the script from the terminal by passing:
-- --coin → Cryptocurrency symbol (e.g., BTC, ETH, ADA)
-- --coin_balance → Your holdings (amount of coins you own)
-- --current_price → Current market price of the coin
 
-🔹 Example 1: Running for Ethereum (ETH)
+Run the script from the terminal by passing:
+- `--coin` → Cryptocurrency symbol (e.g., BTC, ETH, ADA)
+- `--coin_balance` → Your holdings (amount of coins you own)
+- `--current_price` → Current market price of the coin
+
+### 🔹 **Example 1: Running for Ethereum (ETH)**
 ```bash
 python trade_decision.py --coin ETH --coin_balance 1.5 --current_price 1950
 ```
+
+### 🔹 **Example 2: Running for Bitcoin (BTC)**
 ```bash
 python trade_decision.py --coin BTC --coin_balance 2.0 --current_price 48000
 ```
+
+### 🔹 **Example 3: Running for Solana (SOL)**
 ```bash
-python trade_decision.py --coin SOL --coin_balance 2.0 --current_price 48000
+python trade_decision.py --coin SOL --coin_balance 5.0 --current_price 150
 ```
 
-## Example output
-```bash
+---
+
+## 📊 Example Output
+
+```plaintext
 Coin (ETH/USDT) Advanced Statistical Analysis:
 
 +----------------------------+------------------+
@@ -79,3 +94,47 @@ Reasons:
 - ETH has suffered a -35.00% max drawdown, indicating a potential dip-buying opportunity.
 - Your Coin balance: 1.5000 ETH.
 ```
+
+---
+
+## 📌 Decision Logic (BUY, HOLD, or SELL?)
+| **Metric**            | **BUY Signal** | **SELL Signal** | **HOLD Signal** |
+|----------------------|--------------|--------------|--------------|
+| **CAGR** (>10%)    | Strong growth | Declining (<0%) | Moderate growth (0-10%) |
+| **Max Drawdown** (>30%) | Buy at dip | >50% (crashing) | Stable (<30%) |
+| **Sharpe Ratio** (>1.0) | Good risk-adjusted return | <0.5 (too risky) | 0.5 - 1.0 (Neutral) |
+| **Sortino Ratio** (>1.0) | Good downside risk return | <0.5 (high risk) | 0.5 - 1.0 (Neutral) |
+| **Volatility** (<20%) | Stability | >20% (High risk) | Normal (10-20%) |
+| **Current Price** | Below 25th percentile | Above 75th percentile | Between 25-75% |
+
+---
+
+## 🚀 Future Improvements
+🔹 Add **real-time price tracking** with WebSockets  
+🔹 Implement **machine learning** for price prediction  
+🔹 Create a **dashboard using Streamlit** for visualization  
+
+---
+
+## 📜 License
+This project is open-source under the **MIT License**.
+
+---
+
+## 💬 Contributing
+If you want to contribute:
+1. Fork the repo 🍴
+2. Create a new branch 🛠
+3. Make your changes and submit a PR ✨
+
+---
+
+## 💡 Author
+📌 **Boris Tomka**  
+📧 Email: tomkaboris@gmail.com  
+🌐 GitHub: [yourusername](https://github.com/tomkaboris)  
+
+---
+
+### ⭐ **If you like this project, give it a star on GitHub!** ⭐
+
