@@ -132,7 +132,7 @@ If you want to contribute:
 ## 💡 Author
 📌 **Boris Tomka**  
 📧 Email: tomkaboris@gmail.com  
-🌐 GitHub: [yourusername](https://github.com/tomkaboris)  
+🌐 GitHub: [tomkaboris](https://github.com/tomkaboris)  
 
 ---
 
