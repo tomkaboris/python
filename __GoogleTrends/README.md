@@ -54,6 +54,28 @@ pip install pytrends pandas numpy matplotlib
    ```
    Nakon unosa, skripta će obraditi podatke i prikazati grafikon sa trendovima.
 
+## Analiza
+Vrši se kombinovanjem podataka od prethodnog i trenutnog 12 mesecnog perioda.
+```bash
+combined_data = pd.concat([data_previous_12_months, data_last_12_months])
+```
+pd.concat spaja DataFrame-ove iz prethodnog i trenutnog 12-mesečnog perioda. Rezultat combined_data pokriva poslednjih 24 meseca (računato unazad od današnjeg datuma).
+### Računanje prosečnog interesovanja:
+```bash
+average_interest = combined_data[keyword].mean()
+print(f"Average interest level for '{keyword}': {average_interest:.2f}")
+```
+- mean() računa aritmetičku sredinu vrednosti interesovanja za dato ključno slovo u celom 24-mesečnom periodu.
+- :.2f formatira broj na 2 decimale.
+### Linijska (polinomna) regresija
+```bash
+coefficients = np.polyfit(x, y, 1)
+linear_trend = np.polyval(coefficients, x)
+```
+- np.polyfit(x, y, 1) vrši fitovanje linearne funkcije (stepen 1, tj. y = a*x + b) na skupu podataka (x, y).
+- coefficients je lista [a, b] gde je a nagib, a b presečna tačka sa Y-osom.
+np.polyval(coefficients, x) primenjuje dobijenu funkciju na sve tačke x da bi se dobio niz vrednosti koji prikazuje idealnu linearnu „trend liniju”.
+
 ## Primer Izlaza
 
 Po završetku analize, skripta ispisuje prosečno interesovanje i prikazuje grafikon koji sadrži:
