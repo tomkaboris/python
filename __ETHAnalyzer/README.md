@@ -16,7 +16,7 @@ This project is a **Crypto Trading Decision System** that fetches historical cry
 1. **Clone the repository**
    ```bash
    git clone https://github.com/tomkaboris/python.git
-   cd crypto-trading-decision
+   cd python/__ETHAnalyzer
    ```
 
 2. **Install dependencies**
