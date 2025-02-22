@@ -74,7 +74,7 @@ linear_trend = np.polyval(coefficients, x)
 ```
 - np.polyfit(x, y, 1) vrši fitovanje linearne funkcije (stepen 1, tj. y = a*x + b) na skupu podataka (x, y).
 - coefficients je lista [a, b] gde je a nagib, a b presečna tačka sa Y-osom.
-np.polyval(coefficients, x) primenjuje dobijenu funkciju na sve tačke x da bi se dobio niz vrednosti koji prikazuje idealnu linearnu „trend liniju”.
+- np.polyval(coefficients, x) primenjuje dobijenu funkciju na sve tačke x da bi se dobio niz vrednosti koji prikazuje idealnu linearnu „trend liniju”.
 
 ## Primer Izlaza
 
